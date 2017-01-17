@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Flask2 Example</title>
+</head>
+
+<body>
+The following is a key-value table of a dictionary:<br>
+
+<table border="1">
+<tr>
+{% for key in myTable.keys() %}
+	<th align="left">{{ key }}</th>
+{% endfor %}
+</tr>
+
+<tr>
+{% for value in myTable.values() %}
+	<td>{{ value }}</td>
+{% endfor %}
+</tr>
+<tr>
+{% for value in myTable2.values() %}
+	<td>{{ value }}</td>
+{% endfor %}
+</tr>
+</table>
+
+
+</body>
+</html>

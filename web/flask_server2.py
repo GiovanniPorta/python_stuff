@@ -27,5 +27,17 @@ def echo2():
 	kwargs['place'] = request.args.get('place')
 	return render_template('flask2.html', **kwargs)
 
+@app.route('/table/')
+def table():
+	myTable = {'Name':'Giovanni','GUID':'929496c7f3a7e42299180d024ec5b55b'}
+	myTable2 = {'Name':'Comrade','GUID':'8687e9dc36698ee386fb40fd1d7e4329'}
+	return render_template('flask-table.html', myTable=myTable, myTable2=myTable2)
+
+@app.route('/database/')
+def show_db():
+	# TODO: pass database to template and print in table, example code from userdatabase.py below:
+	for row in curs.execute('SELECT id, name FROM users ORDER BY id'):
+		print(row)
+
 
 app.run(port=80, debug=True)
